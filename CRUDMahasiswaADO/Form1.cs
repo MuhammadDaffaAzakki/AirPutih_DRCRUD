@@ -90,4 +90,25 @@ namespace CRUDMahasiswaADO
 
         }
 
+        private void ConnectDatabase()
+        {
+            try
+            {
+                conn.Open();
+                MessageBox.Show("Koneksi berhasil!");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Koneksi gagal: " + ex.Message);
+            }
+            finally
+            {
+                conn.Close();
+            }
+        }
+        private void btnConnect_Click(object sender, EventArgs e)
+        {
+            ConnectDatabase();
+        }
 
+       
